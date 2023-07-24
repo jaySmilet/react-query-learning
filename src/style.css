@@ -13,7 +13,7 @@ nav {
 nav ul {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
   padding: 0.5rem;
 }
 nav ul li {
@@ -29,4 +29,24 @@ nav ul li a {
 nav ul li a.active {
   text-decoration: underline;
   color: rgb(5, 32, 11);
+}
+table {
+  margin: 1rem auto;
+}
+table,
+thead,
+tbody,
+tr {
+  width: 95%;
+  text-align: center;
+}
+th {
+  background-color: rgb(163, 153, 154);
+  color: #fff;
+  padding: 0.5rem;
+}
+td {
+  background-color: rgb(216, 210, 210);
+  color: rgb(29, 27, 27);
+  padding: 0.35rem;
 }
