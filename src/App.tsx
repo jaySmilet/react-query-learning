@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './components/Home.page';
 import Layout from './components/Layout';
@@ -8,7 +9,7 @@ import './style.css';
 
 export default function App() {
   return (
-    <>
+    <QueryClientProvider client={new QueryClient}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -18,6 +19,6 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </QueryClientProvider>
   );
 }
