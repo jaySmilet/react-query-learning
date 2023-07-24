@@ -8,15 +8,16 @@ nav {
   height: 30px;
   background-color: pink;
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 nav ul {
   display: flex;
   gap: 0.5rem;
 }
-nav ul li{
+nav ul li {
   padding: 0.25rem;
+  list-style-type: none;
 }
-nav ul li a{
+nav ul li a {
   text-decoration: none;
 }

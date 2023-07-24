@@ -11,10 +11,10 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" component={<Layout />}>
-            <Route index component={HomePage} />
-            <Route path="/super-heroes" component={SuperHeroesPage} />
-            <Route path="/rq-super-heroes" component={RQSuperHeroesPage} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/super-heroes" element={<SuperHeroesPage />} />
+            <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
