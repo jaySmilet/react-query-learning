@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
@@ -7,13 +7,13 @@ const Layout = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/super-heroes">SuperHeroes</Link>
+            <NavLink to="/super-heroes">SuperHeroes</NavLink>
           </li>
           <li>
-            <Link to="/rq-super-heroes">RQSuperHeroes</Link>
+            <NavLink to="/rq-super-heroes">RQSuperHeroes</NavLink>
           </li>
         </ul>
       </nav>
