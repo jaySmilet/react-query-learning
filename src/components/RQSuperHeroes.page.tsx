@@ -29,7 +29,7 @@ const RQSuperHeroesPage = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((value: SuperHero) => {
+          {/* {data.map((value: SuperHero) => {
             return (
               <tr>
                 <td>{value.id}</td>
@@ -37,7 +37,7 @@ const RQSuperHeroesPage = () => {
                 <td>{value.alterEgo}</td>
               </tr>
             );
-          })}
+          })} */}
         </tbody>
       </table>
     </>
