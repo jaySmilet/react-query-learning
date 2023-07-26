@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import { SuperHero } from '../models/models';
 
 const fetchSuperHeroes = async () => {
-  const res: Response = await fetch('http://localhost:3000/supeheroes8');
+  const res: Response = await fetch('http://localhost:3000/supeheroes');
   return await res.json();
 };
 
