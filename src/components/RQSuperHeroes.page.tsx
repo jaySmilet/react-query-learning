@@ -16,7 +16,7 @@ const RQSuperHeroesPage = () => {
     return <div>Loading...</div>;
   }
   if (isError) {
-    return <p>{error}</p>;
+    return <p>{(error as Error).message}</p>;
   }
   return (
     <>
