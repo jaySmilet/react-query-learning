@@ -35,7 +35,7 @@ const RQSuperHeroesPage = () => {
         <tbody>
           {data.map((value: SuperHero) => {
             return (
-              <tr key={value.id}>
+              <tr key={Math.random(value.id)}>
                 <td>{value.id}</td>
                 <td>{value.name}</td>
                 <td>{value.alterEgo}</td>
