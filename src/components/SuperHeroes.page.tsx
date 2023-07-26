@@ -4,6 +4,7 @@ import { SuperHero } from '../models/models';
 const SuperHeroesPage = () => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [data, setData] = React.useState<SuperHero[]>([]);
+  const [error,setError] = React.useState<string>('');
   React.useEffect(() => {
     setIsLoading(true);
     fetch('http://localhost:3000/supeheroes', {
@@ -20,10 +21,14 @@ const SuperHeroesPage = () => {
       .catch((err) => {
         console.log(err);
         setIsLoading(false);
+        setError(err.message)
       });
   }, []);
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>{error}</div>;
   }
   return (
     <>
