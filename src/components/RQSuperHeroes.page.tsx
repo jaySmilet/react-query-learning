@@ -3,14 +3,20 @@ import { useQuery } from 'react-query';
 import { SuperHero } from '../models/models';
 
 const fetchSuperHeroes = async () => {
-  const res: Response = await fetch('http://localhost:3000/supeheroes');
+  const res: Response = await fetch('http://localhost:3000/supeheroes8');
   return await res.json();
 };
 
 const RQSuperHeroesPage = () => {
-  const { isLoading, data } = useQuery('super-heroes', fetchSuperHeroes);
+  const { isLoading, data, isError, error } = useQuery(
+    'super-heroes',
+    fetchSuperHeroes
+  );
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <p>{error}</p>;
   }
   return (
     <>
