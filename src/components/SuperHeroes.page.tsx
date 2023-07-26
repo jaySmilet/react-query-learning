@@ -4,7 +4,7 @@ import { SuperHero } from '../models/models';
 const SuperHeroesPage = () => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [data, setData] = React.useState<SuperHero[]>([]);
-  const [error,setError] = React.useState<string>('');
+  const [error, setError] = React.useState<string>('');
   React.useEffect(() => {
     setIsLoading(true);
     fetch('http://localhost:3000/supeheroes', {
@@ -21,7 +21,7 @@ const SuperHeroesPage = () => {
       .catch((err) => {
         console.log(err);
         setIsLoading(false);
-        setError(err.message)
+        setError(err.message);
       });
   }, []);
   if (isLoading) {
@@ -43,7 +43,7 @@ const SuperHeroesPage = () => {
         <tbody>
           {data.map((value: SuperHero) => {
             return (
-              <tr>
+              <tr key={value.id}>
                 <td>{value.id}</td>
                 <td>{value.name}</td>
                 <td>{value.alterEgo}</td>
