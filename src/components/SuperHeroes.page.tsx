@@ -7,16 +7,18 @@ const SuperHeroesPage = () => {
   const [error, setError] = React.useState<string>('');
   React.useEffect(() => {
     setIsLoading(true);
-    fetch('http://localhost:3000/supeheroes1', {
+    fetch('http://localhost:3000/supeheroes', {
       headers: {
         'Content-Type': 'application/json',
       },
     })
       .then((res: Response) => {
-        // if (res.status === 200) {
-        res.json().then((v: SuperHero[]) => setData(v));
+        if (res.status === 200) {
+          res.json().then((v: SuperHero[]) => setData(v));
+        } else {
+          setError(res.statusText);
+        }
         setIsLoading(false);
-        // }
       })
       .catch((err) => {
         console.log(err);
