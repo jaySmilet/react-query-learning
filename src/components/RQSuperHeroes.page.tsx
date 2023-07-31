@@ -12,8 +12,7 @@ const RQSuperHeroesPage = () => {
     'super-heroes',
     fetchSuperHeroes,
     {
-      refetchOnMount: true,
-      refetchOnWindowFocus: true,
+      refetchInterval: 2000,
     }
   );
   console.log({ isLoading, isFetching });
