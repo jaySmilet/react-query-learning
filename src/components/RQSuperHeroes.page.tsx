@@ -8,11 +8,20 @@ const fetchSuperHeroes = async () => {
 };
 
 const RQSuperHeroesPage = () => {
+  const onSuccess = () => {
+    console.log(`show popup on success`);
+  };
+
+  const onError = () => {
+    console.log(`show error on error`);
+  };
+
   const { isLoading, data, isError, error, isFetching } = useQuery(
     'super-heroes',
     fetchSuperHeroes,
     {
-      refetchInterval: 2000,
+      onSuccess,
+      onError,
     }
   );
   console.log({ isLoading, isFetching });
