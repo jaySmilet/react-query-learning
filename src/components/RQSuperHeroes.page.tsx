@@ -13,6 +13,7 @@ const RQSuperHeroesPage = () => {
     fetchSuperHeroes,
     {
       refetchOnMount: true,
+      refetchOnWindowFocus: true,
     }
   );
   console.log({ isLoading, isFetching });
