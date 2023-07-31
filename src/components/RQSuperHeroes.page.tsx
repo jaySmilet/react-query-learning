@@ -12,7 +12,7 @@ const RQSuperHeroesPage = () => {
     'super-heroes',
     fetchSuperHeroes,
     {
-      refetchOnMount: true
+      refetchOnMount: true,
     }
   );
   console.log({ isLoading, isFetching });
@@ -35,7 +35,7 @@ const RQSuperHeroesPage = () => {
         <tbody>
           {data.map((value: SuperHero) => {
             return (
-              <tr key={Math.random(value.id)}>
+              <tr key={Math.round(value.id)}>
                 <td>{value.id}</td>
                 <td>{value.name}</td>
                 <td>{value.alterEgo}</td>
