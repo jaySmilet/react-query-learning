@@ -12,7 +12,7 @@ const RQSuperHeroesPage = () => {
     'super-heroes',
     fetchSuperHeroes,
     {
-      staleTime: 30000
+      refetchOnMount: true
     }
   );
   console.log({ isLoading, isFetching });
