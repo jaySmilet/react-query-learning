@@ -43,7 +43,7 @@ const RQSuperHeroesPage = () => {
           })} */}
           {data.map((value, index) => {
             return (
-              <tr key={index}>
+              <tr key={Math.round(index)}>
                 <td>1</td>
                 <td>{value}</td>
                 <td>1</td>
