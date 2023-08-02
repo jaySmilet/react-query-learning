@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { useSuperHeroes } from '../hooks/useSuperHeroes';
+import { SuperHero } from '../models/models';
 
 const RQSuperHeroesPage = () => {
   const onSuccess = () => {
@@ -32,16 +34,18 @@ const RQSuperHeroesPage = () => {
           </tr>
         </thead>
         <tbody>
-          {/* {data.map((value: SuperHero) => {
+          {data.map((value: SuperHero) => {
             return (
               <tr key={Math.round(value.id)}>
                 <td>{value.id}</td>
-                <td>{value.name}</td>
+                <td>
+                  <Link to={`/super-hero/${value.id}`}>{value.name}</Link>
+                </td>
                 <td>{value.alterEgo}</td>
               </tr>
             );
-          })} */}
-          {data.map((value, index) => {
+          })}
+          {/* {data.map((value, index) => {
             return (
               <tr key={Math.round(index)}>
                 <td>1</td>
@@ -49,7 +53,7 @@ const RQSuperHeroesPage = () => {
                 <td>1</td>
               </tr>
             );
-          })}
+          })} */}
         </tbody>
       </table>
     </>

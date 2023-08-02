@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './components/Home.page';
 import Layout from './components/Layout';
 import RQSuperHeroesPage from './components/RQSuperHeroes.page';
+import { SuperHero } from './components/SuperHero';
 import SuperHeroesPage from './components/SuperHeroes.page';
 import './style.css';
 
@@ -17,6 +18,7 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="/super-heroes" element={<SuperHeroesPage />} />
             <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
+            <Route path="/super-hero/:heroId" element={<SuperHero />} />
           </Route>
         </Routes>
       </BrowserRouter>
