@@ -22,6 +22,9 @@ const RQSuperHeroesPage = () => {
     {
       onSuccess,
       onError,
+      select: (data: SuperHero[]) => {
+        return data.map((hero) => hero.name);
+      },
     }
   );
   console.log({ isLoading, isFetching });
@@ -42,12 +45,21 @@ const RQSuperHeroesPage = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((value: SuperHero) => {
+          {/* {data.map((value: SuperHero) => {
             return (
               <tr key={Math.round(value.id)}>
                 <td>{value.id}</td>
                 <td>{value.name}</td>
                 <td>{value.alterEgo}</td>
+              </tr>
+            );
+          })} */}
+          {data.map((value, index) => {
+            return (
+              <tr key={index}>
+                <td>1</td>
+                <td>{value}</td>
+                <td>1</td>
               </tr>
             );
           })}
