@@ -1,11 +1,5 @@
 import * as React from 'react';
-import { useQuery } from 'react-query';
-import { SuperHero } from '../models/models';
-
-const fetchSuperHeroes = async () => {
-  const res: Response = await fetch('http://localhost:3000/supeheroes');
-  return await res.json();
-};
+import { useSuperHeroes } from '../hooks/useSuperHeroes';
 
 const RQSuperHeroesPage = () => {
   const onSuccess = () => {
@@ -16,16 +10,9 @@ const RQSuperHeroesPage = () => {
     console.log(`show error on error`);
   };
 
-  const { isLoading, data, isError, error, isFetching } = useQuery(
-    'super-heroes',
-    fetchSuperHeroes,
-    {
-      onSuccess,
-      onError,
-      select: (data: SuperHero[]) => {
-        return data.map((hero) => hero.name);
-      },
-    }
+  const { isLoading, data, isError, error, isFetching } = useSuperHeroes(
+    onSuccess,
+    onError
   );
   console.log({ isLoading, isFetching });
   if (isLoading) {
