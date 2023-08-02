@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './components/Home.page';
 import Layout from './components/Layout';
+import ParallelQueries from './components/RQParallelQueries';
 import RQSuperHeroesPage from './components/RQSuperHeroes.page';
 import { SuperHero } from './components/SuperHero';
 import SuperHeroesPage from './components/SuperHeroes.page';
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/super-heroes" element={<SuperHeroesPage />} />
             <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
             <Route path="/super-hero/:heroId" element={<SuperHero />} />
+            <Route path="/parallel-queries" element={<ParallelQueries />} />
           </Route>
         </Routes>
       </BrowserRouter>
